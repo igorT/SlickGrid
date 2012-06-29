@@ -1075,7 +1075,6 @@ if (typeof Slick === "undefined") {
 
         function setOverflow() {
             $viewportTopL.css({
-                'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'scroll' : (options.frozenRow > -1) ? 'hidden' : 'auto',
                 'overflow-y': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'hidden' : (options.frozenRow > -1) ? 'scroll' : 'auto'
             });
 
