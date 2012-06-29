@@ -1079,7 +1079,8 @@ if (typeof Slick === "undefined") {
             });
 
             $viewportTopR.css({
-                'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'scroll' : (options.frozenRow > -1) ? 'hidden' : 'auto',
+                //'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'scroll' : (options.frozenRow > -1) ? 'hidden' : 'auto',
+                'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'auto' : (options.frozenRow > -1) ? 'hidden' : 'auto',
                 'overflow-y': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'scroll' : 'auto' : (options.frozenRow > -1) ? 'scroll' : 'auto'
             });
 
