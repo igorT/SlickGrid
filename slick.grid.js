@@ -230,7 +230,7 @@ if (typeof Slick === "undefined") {
             options = $.extend({}, defaults, options);
             columnDefaults.width = options.defaultColumnWidth;
 
-            options.frozenColumn = (options.frozenColumn >= 0 && options.frozenColumn < columns.length) ? parseInt(options.frozenColumn) : -1;
+            //options.frozenColumn = (options.frozenColumn >= 0 && options.frozenColumn < columns.length) ? parseInt(options.frozenColumn) : -1;
             options.frozenRow = (options.frozenRow >= 0 && options.frozenRow < columns.length) ? parseInt(options.frozenRow) : -1;
 
             // validate loaded JavaScript modules against requested options
@@ -1410,6 +1410,7 @@ if (typeof Slick === "undefined") {
         function setColumns(columnDefinitions) {
             columns = columnDefinitions;
             if (initialized) {
+                trigger(self.onBeforeColumnsChanged, {});
                 setPaneVisibility();
                 setOverflow();
 
@@ -1421,6 +1422,7 @@ if (typeof Slick === "undefined") {
                 updateCanvasWidth();
                 applyColumnWidths();
                 handleScroll();
+                trigger(self.onAfterColumnsChanged, {});
             }
         }
 
@@ -3361,6 +3363,9 @@ if (typeof Slick === "undefined") {
 
         $.extend(this, {
             "slickGridVersion": "2.0",
+
+            "onBeforeColumnsChanged": new Slick.Event(),
+            "onAfterColumnsChanged": new Slick.Event(),
 
             // Events
             "onScroll": new Slick.Event(),
