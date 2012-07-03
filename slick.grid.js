@@ -367,8 +367,10 @@ if (typeof Slick === "undefined") {
                 if (jQuery.fn.mousewheel && options.frozenColumn > -1) {
                     if (options.frozenRow > -1) {
                         $viewportBottomL.mousewheel(handleMouseWheel);
+                        $viewportBottomR.mousewheel(handleMouseWheel);
                     } else {
                         $viewportTopL.mousewheel(handleMouseWheel);
+                        $viewportTopR.mousewheel(handleMouseWheel);
                     }
                 }
 
