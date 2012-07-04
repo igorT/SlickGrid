@@ -780,7 +780,7 @@ if (typeof Slick === "undefined") {
                 $viewportScrollContainer[0].scrollLeft = $viewportScrollContainer[0].scrollLeft - 10;
             }
 
-            $headers.sortable({
+            $headerR.sortable({
                 containment: "parent",
                 axis: "x",
                 cursor: "default",
@@ -819,7 +819,7 @@ if (typeof Slick === "undefined") {
                         return;
                     }
 
-                    var reorderedIds = $headerL.sortable("toArray");
+                    var reorderedIds = $headerL.children().map(function(){return this.id}).get();
                     reorderedIds = reorderedIds.concat($headerR.sortable("toArray"));
 
                     var reorderedColumns = [];
