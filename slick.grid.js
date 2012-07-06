@@ -490,9 +490,12 @@ if (typeof Slick === "undefined") {
 
                     $paneTopL.width( canvasWidthL );
                     $viewportTopL.width(canvasWidthL);
-
-                    $viewportTopR.width(viewportW - canvasWidthL);
-
+                    if (viewportHasVScroll){
+                      $viewportTopR.width(viewportW - canvasWidthL - scrollbarDimensions.width );
+                    }
+                    else{
+                      $viewportTopR.width(viewportW - canvasWidthL);
+                    }
                     $canvasTopR.width(canvasWidthR);
 
                     if ( options.frozenRow > -1 ) {
