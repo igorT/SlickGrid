@@ -1978,8 +1978,8 @@ if (typeof Slick === "undefined") {
 
             if (h !== oldH) {
                 if (options.frozenRow > -1) {
-                    $canvasBottomL.css("height", h);
-                    $canvasBottomR.css("height", h);
+                    $canvasBottomL.css("height", h-(options.frozenRow * options.rowHeight));
+                    $canvasBottomR.css("height", h-(options.frozenRow *options.rowHeight));
                 } else {
                     $canvasTopL.css("height", h);
                     $canvasTopR.css("height", h);
