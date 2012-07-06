@@ -1722,8 +1722,10 @@ if (typeof Slick === "undefined") {
                 makeActiveCellNormal();
             }
             for (var row in rowsCache) {
-                removeRowFromCache(row);
-            }
+              //if(options.frozenRow == -1 || (options.frozenRow > -1 && row >= options.frozenRow) ){  
+                  removeRowFromCache(row);
+              //} 
+           }
         }
 
         function removeRowFromCache(row) {
@@ -1753,6 +1755,9 @@ if (typeof Slick === "undefined") {
                 if (rowsCache[rows[i]]) {
                     removeRowFromCache(rows[i]);
                 }
+              if( i <= options.frozenRow ){
+
+              } 
             }
         }
 
@@ -2060,7 +2065,22 @@ if (typeof Slick === "undefined") {
                 stringArrayR = [],
                 rows = [],
                 needToReselectCell = false;
-
+            if( options.frozenRow > -1 && range.top != 0){
+              for( var i =0; i<Math.min(options.frozenRow, range.top-1); i++){
+                if (rowsCache[i]) {
+                    continue;
+                }
+                renderedRows++;
+                rows.push(i);
+                appendRowHtml(stringArrayL, stringArrayR, i);
+                if (activeCellNode && activeRow === i) {
+                    needToReselectCell = true;
+                }
+                counter_rows_rendered++;
+              }
+            }
+    
+    
             for (var i = range.top; i <= range.bottom; i++) {
                 if (rowsCache[i]) {
                     continue;
