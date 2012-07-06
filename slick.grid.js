@@ -1905,7 +1905,7 @@ if (typeof Slick === "undefined") {
                         // 'top': paneBottomTop
                     });
                    
-                    $viewportBottomR.height(viewportBottomH+ ( ( options.frozenColumn > -1 && options.autoHeight ) ? scrollbarDimensions.height : 0 ));
+                    $viewportBottomR.height(viewportBottomH+ ( ( options.frozenColumn > -1 && options.autoHeight ) ? scrollbarDimensions.height : 0 ) );
                 }
             } else {
                 if (options.frozenRow > -1) {
@@ -1918,8 +1918,9 @@ if (typeof Slick === "undefined") {
             }
 
             if (options.frozenRow > -1) {
-                $viewportBottomL.height(viewportBottomH + ( ( options.frozenColumn > -1 && options.autoHeight ) ? scrollbarDimensions.height : 0 ));
-
+                $viewportBottomL.height(viewportBottomH + ( ( options.frozenColumn > -1 && options.autoHeight ) ? scrollbarDimensions.height : 0 ) );
+                $viewportBottomL.css( 'padding-bottom', options.rowHeight+ 'px' ); 
+                $viewportBottomR.css( 'padding-bottom', options.rowHeight + 'px' ); 
                 $canvasTopL.height(options.frozenRow * options.rowHeight);
                 $canvasTopR.height(options.frozenRow * options.rowHeight);
             } else {
