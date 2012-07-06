@@ -1889,12 +1889,14 @@ if (typeof Slick === "undefined") {
                     $paneBottomL.css({
                         'top': $paneHeaderR.height()
                     });
-                    $paneTopL.css({
-                        'bottom': '0px',
+                  //IGOR todo figure out why there is a magic number here
+                  var topSide = Math.min( (getDataLength()-1) * options.rowHeight +options.topPanelHeight-11 + options.headerRowHeight, viewportH );
+                  $paneTopL.css({
+                        'top': topSide,
                         'z-index': 10
                     });
                     $paneTopR.css({
-                        'bottom': '0px',
+                        'top': topSide,
                         'z-index': 10
                     });
                     
