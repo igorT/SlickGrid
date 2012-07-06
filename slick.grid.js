@@ -1115,21 +1115,21 @@ if (typeof Slick === "undefined") {
             });
 
             $viewportTopR.css({
-                //'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'scroll' : (options.frozenRow > -1) ? 'hidden' : 'auto',
-                'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'auto' : 'auto' : (options.frozenRow > -1) ? 'auto' : 'auto',
+                'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'scroll' : (options.frozenRow > -1) ? 'hidden' : 'auto',
+                //'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'auto' : 'auto' : (options.frozenRow > -1) ? 'auto' : 'auto',
                 //'overflow-y': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'scroll' : 'auto' : (options.frozenRow > -1) ? 'scroll' : 'auto'
                 'overflow-y': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'auto' : (options.frozenRow > -1) ? 'hidden' : 'auto'
             });
 
             $viewportBottomL.css({
-                //'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'scroll' : 'auto' : (options.frozenRow > -1) ? 'auto' : 'auto',
-                'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'auto' : (options.frozenRow > -1) ? 'auto' : 'auto',
+                'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'scroll' : 'auto' : (options.frozenRow > -1) ? 'auto' : 'auto',
+                //'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'auto' : (options.frozenRow > -1) ? 'auto' : 'auto',
                 'overflow-y': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'hidden' : (options.frozenRow > -1) ? 'scroll' : 'auto'
             });
 
             $viewportBottomR.css({
-                //'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'scroll' : 'auto' : (options.frozenRow > -1) ? 'auto' : 'auto',
-                'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'auto' : (options.frozenRow > -1) ? 'auto' : 'auto',
+                'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'scroll' : 'auto' : (options.frozenRow > -1) ? 'auto' : 'auto',
+                //'overflow-x': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'hidden' : 'auto' : (options.frozenRow > -1) ? 'auto' : 'auto',
                 'overflow-y': (options.frozenColumn > -1) ? (options.frozenRow > -1) ? 'auto' : 'auto' : (options.frozenRow > -1) ? 'auto' : 'auto'
             });
         }
@@ -1137,8 +1137,8 @@ if (typeof Slick === "undefined") {
         function setScroller() {
             if (options.frozenColumn > -1) {
                 if (options.frozenRow > -1) {
-                    //$viewportScrollContainer = $viewportBottomR;
-                    $viewportScrollContainer = $viewportTopR;
+                    $viewportScrollContainer = $viewportBottomR;
+                    //$viewportScrollContainer = $viewportTopR;
             
                 } else {
                     $viewportScrollContainer = $viewportTopR;
@@ -2175,8 +2175,8 @@ if (typeof Slick === "undefined") {
 
                 if (options.frozenColumn > -1) {
                     if (options.frozenRow > -1) {
-                        //$viewportTopR[0].scrollLeft = scrollLeft;
-                        $viewportBottomR[0].scrollLeft = scrollLeft;
+                        $viewportTopR[0].scrollLeft = scrollLeft;
+                        //$viewportBottomR[0].scrollLeft = scrollLeft;
                     }
                 } else {
                     if (options.frozenRow > -1) {
