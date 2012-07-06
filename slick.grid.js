@@ -2261,28 +2261,11 @@ if (typeof Slick === "undefined") {
                 // Scroll down
                 scrollTo(scrollTop + (Math.abs(delta) * options.rowHeight));
             }
-            if(deltaX > 0){
-                var currentScroll = $headerScrollContainer[0].scrollLeft;
-                $headerScrollContainer[0].scrollLeft( currentScroll + deltaX );
-                $topPanelScroller[0].scrollLeft( currentScroll + deltaX );
-                $headerRowScrollContainer[0].scrollLeft(currentScroll + deltaX );
-
-
-                if (options.frozenColumn > -1) {
-                    if (options.frozenRow > -1) {
-                        $viewportTopR[0].scrollLeft( currentScroll + deltaX );
-                        //$viewportBottomR[0].scrollLeft = scrollLeft;
-                    }
-                } else {
-                    if (options.frozenRow > -1) {
-                        $viewportTopL[0].scrollLeft(currentScroll + deltaX );
-                    }
-                }
-            }
-
             render();
-            event.preventDefault();
 
+            if( deltaX == 0 ){
+              event.preventDefault();
+            }
             trigger(self.onMouseWheel, {
                 scrollTop: scrollTop
             });
