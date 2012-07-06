@@ -270,7 +270,7 @@ if (typeof Slick === "undefined") {
 
             // Append the columnn containers to the headers
             $headerL = $("<div class='slick-header-columns slick-header-columns-left' style='width:10000px; left:-1000px' />").appendTo($headerScrollerL);
-            $headerR = $("<div class='slick-header-columns slick-header-columns-right' style='width:10000px; left:-1000px' />").appendTo($headerScrollerR);
+            $headerR = $("<div class='slick-header-columns slick-header-columns-right' style='width:50000px; left:-1000px' />").appendTo($headerScrollerR);
 
             // Cache the header columns
             $headers = $().add($headerL).add($headerR);
@@ -293,7 +293,7 @@ if (typeof Slick === "undefined") {
 
             // Append the top panel
             $topPanelL = $("<div class='slick-top-panel' style='width:10000px' />").appendTo($topPanelScrollerL);
-            $topPanelR = $("<div class='slick-top-panel' style='width:10000px' />").appendTo($topPanelScrollerR);
+            $topPanelR = $("<div class='slick-top-panel' style='width:50000px' />").appendTo($topPanelScrollerR);
 
             $topPanel = $().add($topPanelL).add($topPanelR);
 
