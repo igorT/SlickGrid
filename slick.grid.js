@@ -2257,18 +2257,18 @@ if (typeof Slick === "undefined") {
 
         function handleMouseWheel(event, delta, deltaX, deltaY) {
             var range = getVisibleRange();
-
-            if (delta > 0) {
-                // Scroll up
-                scrollTo(scrollTop - (Math.abs(delta) * options.rowHeight));
-            } else {
-                // Scroll down
-                scrollTo(scrollTop + (Math.abs(delta) * options.rowHeight));
-            }
-            render();
-
             if( deltaX == 0 ){
               event.preventDefault();
+
+              if (delta > 0) {
+                // Scroll up
+                scrollTo(scrollTop - (Math.abs(delta) * options.rowHeight));
+               } else {
+                // Scroll down
+                scrollTo(scrollTop + (Math.abs(delta) * options.rowHeight));
+              }
+              render();
+
             }
             trigger(self.onMouseWheel, {
                 scrollTop: scrollTop,
