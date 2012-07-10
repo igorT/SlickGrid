@@ -2271,7 +2271,8 @@ if (typeof Slick === "undefined") {
               event.preventDefault();
             }
             trigger(self.onMouseWheel, {
-                scrollTop: scrollTop
+                scrollTop: scrollTop,
+                scrollLeft: deltaX
             });
         }
 
