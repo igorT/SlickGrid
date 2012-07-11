@@ -1089,9 +1089,8 @@ if (typeof Slick === "undefined") {
 
         function setPaneVisibility() {
             if (options.frozenColumn > -1) {
-                $paneHeaderR.show();
-                $paneTopR.show();
-
+                  $paneHeaderR.show();
+                  $paneTopR.show();
                 if (options.frozenRow > -1) {
                     $paneBottomL.show();
                     $paneBottomR.show();
@@ -1111,6 +1110,10 @@ if (typeof Slick === "undefined") {
                     $paneBottomL.hide();
                 }
             }
+          //Special rule if there are only frozen columns
+            if ( columns.length <= options.frozenColumn+1) {
+                  $paneHeaderR.hide();
+             }
         }
 
         function setOverflow() {
@@ -1896,7 +1899,7 @@ if (typeof Slick === "undefined") {
 
                 if (options.frozenRow > -1) {
                     $paneBottomL.css({
-                        'top': $paneHeaderR.height()
+                        'top': $paneHeaderL.height()
                     });
                   //IGOR todo figure out why there is a magic number here
                   var topSide = Math.min( (getDataLength()-1) * options.rowHeight +options.topPanelHeight-11 + options.headerRowHeight, viewportH );
@@ -1910,7 +1913,7 @@ if (typeof Slick === "undefined") {
                     });
                     
                     $paneBottomR.css({
-                        'top': $paneHeaderR.height()
+                        'top': $paneHeaderL.height()
                         // 'top': paneBottomTop
                     });
                    
