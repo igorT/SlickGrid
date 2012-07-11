@@ -1890,10 +1890,6 @@ if (typeof Slick === "undefined") {
             var viewportBottomH = viewportH - viewportTopH;
 
             if (options.frozenColumn > -1) {
-                //$paneTopR.css({
-                    //'top': $paneHeaderR.height()
-                //   ,'height': paneTopH
-                //});
 
                 $viewportTopR.height(viewportTopH);
 
@@ -1937,6 +1933,15 @@ if (typeof Slick === "undefined") {
                 $canvasTopR.height(options.frozenRow * options.rowHeight);
             } else {
                 $viewportTopR.height(viewportTopH);
+            }
+
+            //Fix for not having pane be relatively positioned
+            if (options.frozenRow == -1 && options.frozenColumn == -1) {
+            
+                $paneTopL.css({
+                    'top': $paneHeaderL.height()
+                   ,'height': paneTopH
+                });
             }
 
             if (options.forceFitColumns) {
