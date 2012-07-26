@@ -473,6 +473,8 @@ if (typeof Slick === "undefined") {
         }
 
         function updateCanvasWidth(forceColumnWidthsUpdate) {
+            //We need to update viewport width as it may have changed due to zooming
+            viewportW = parseFloat($.css($container[0], "width", true));
             var oldCanvasWidth = canvasWidth;
             canvasWidth = getCanvasWidth();
 
