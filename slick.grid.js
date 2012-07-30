@@ -1900,7 +1900,11 @@ if (typeof Slick === "undefined") {
                         'top': $paneHeaderL.height()
                     });
                   //IGOR todo figure out why there is a magic number here
-                  var topSide = Math.min( (getDataLength()-1) * options.rowHeight +options.topPanelHeight-11 + options.headerRowHeight, viewportH );
+                  var moveTotalRow = viewportH;
+                  if ( scrollbarDimensions.height == 0 ){
+                    moveTotalRow+=options.rowHeight;
+                  }
+                  var topSide = Math.min( (getDataLength()-1) * options.rowHeight +options.topPanelHeight-11 + options.headerRowHeight, moveTotalRow );
                   $paneTopL.css({
                         'top': topSide,
                         'z-index': 10
