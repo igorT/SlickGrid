@@ -2679,7 +2679,7 @@ if (typeof Slick === "undefined") {
             var isBottom = $cell.parents('.grid-canvas-bottom').length;
 
             if ( options.frozenRow > -1 && isBottom ) {
-                rowOffset = options.frozenRow * options.rowHeight;
+                rowOffset = options.frozenRow * options.rowHeight-1;
             }
 
             var row = getCellFromPoint(e.clientX - c.left, e.clientY - c.top + rowOffset).row;
