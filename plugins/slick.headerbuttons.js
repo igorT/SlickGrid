@@ -117,6 +117,10 @@
             btn.attr("title", button.tooltip);
           }
 
+          if (button.text) {
+            btn.text(button.text)
+          }
+
           if (button.command) {
             btn.data("command", button.command);
           }
