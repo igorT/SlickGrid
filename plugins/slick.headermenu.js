@@ -226,7 +226,7 @@
       // Position the menu.
       $menu
         .css("top", $(this).offset().top + $(this).height())
-        .css("left", $(this).offset().left);
+        .css("left", $(this).parent().offset().left);
 
 
       // Mark the header as active to keep the highlighting.
@@ -264,7 +264,7 @@
     $.extend(this, {
       "init": init,
       "destroy": destroy,
-
+      "showMenu": showMenu,
       "onBeforeMenuShow": new Slick.Event(),
       "onCommand": new Slick.Event()
     });
